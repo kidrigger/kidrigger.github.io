@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Bob&#39;s Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 29 Nov 2019 21:12:00 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 25 Apr 2020 14:41:03 +0200</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About Me</title>
+      <link>/about/</link>
+      <pubDate>Sat, 25 Apr 2020 14:41:03 +0200</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Since you&amp;rsquo;re here, this is the time for me to introduce myself.
+My name is Anish Bhobe and as you can guess from my projects, I&amp;rsquo;m a huge enthusiast of computer graphics and C++ in game development.
+I at the moment of writing I am a fortnight (not the game) away from finishing my last academic requirement to get the paper that declares that I may have learnt a few things at Birla Institute of Science and Technology, Pilani - K.</description>
+    </item>
     
     <item>
       <title>Vulkan Render to Cubemap Using Multiview</title>
