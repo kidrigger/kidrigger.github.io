@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2019-11-29T21:12:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2019-11-29T21:12:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/vulkan-render-to-cubemap-using-multiview/</loc>
+    <lastmod>2019-11-29T21:12:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/blaze/</loc>
+    <lastmod>2019-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/</loc>
+    <lastmod>2019-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/gpu-ray-tracing-in-one-weekend/</loc>
+    <lastmod>2019-02-16T08:30:52+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/whats-new-graphics/</loc>
+    <lastmod>2018-10-25T01:03:59+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/tracer/</loc>
+    <lastmod>2018-08-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/godot-dipping-toes/</loc>
+    <lastmod>2018-05-04T10:35:04+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/gsoc-18-before-the-storm/</loc>
+    <lastmod>2018-05-03T12:15:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/weekly-game-jam-19/</loc>
+    <lastmod>2017-11-23T23:37:23+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+  </url>
+  
+</urlset>

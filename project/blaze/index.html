@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Blaze :: Bob&#39;s Terminal — Here&#39;s me nerding out.</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="Blaze is my lovely little toy renderer that I wholly use as a lab-rat for new techniques and to learn computer graphics in Vulkan.
+
+There are a lot of goals - lot of things to learn. Blaze get&amp;rsquo;s a lot of love - but she&amp;rsquo;s not the only project I&amp;rsquo;m working on.
+I use:
+Some C&#43;&#43;17 features (or did and refactored them out after my newfound love for simpler older C&#43;&#43; features)" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/project/blaze/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/green.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/img/favicon/green.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  <meta name="twitter:site" content="" />
+
+<meta name="twitter:creator" content="" />
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Blaze :: Bob&#39;s Terminal">
+<meta property="og:description" content="Blaze is my lovely little toy renderer that I wholly use as a lab-rat for new techniques and to learn computer graphics in Vulkan.
+
+There are a lot of goals - lot of things to learn. Blaze get&amp;rsquo;s a lot of love - but she&amp;rsquo;s not the only project I&amp;rsquo;m working on.
+I use:
+Some C&#43;&#43;17 features (or did and refactored them out after my newfound love for simpler older C&#43;&#43; features)" />
+<meta property="og:url" content="/project/blaze/" />
+<meta property="og:site_name" content="Blaze" />
+
+  <meta property="og:image" content="/images/blaze/logo.png">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2019-06-06 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Electric Sheep
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/post">Posts</a></li>
+        
+      
+        
+          <li><a href="/project">Projects</a></li>
+        
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/post">Posts</a></li>
+      
+    
+      
+        <li><a href="/project">Projects</a></li>
+      
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/project/blaze/">Blaze</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2019-06-06
+    </span>
+    
+    
+  </div>
+
+  
+
+  
+  <img src="/images/blaze/logo.png" class="post-cover" />
+  
+
+  <div class="post-content"><div>
+        <p>Blaze is my lovely little toy renderer that I wholly use as a lab-rat for new techniques and to learn computer graphics
+in Vulkan.</p>
+
+<p><center><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gmUxLgRCC1o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+
+<p>There are a lot of goals - lot of things to learn. Blaze get&rsquo;s a lot of love - but she&rsquo;s not the only project I&rsquo;m
+working on.</p>
+
+<p>I use:</p>
+
+<p>Some C++17 features (or did and refactored them out after my newfound love for simpler older C++ features)<br />
+Vulkan 1.1 (Will upgrade to 1.2 once I switch to an RTX card)<br />
+Some really nice libraries:</p>
+
+<ul>
+<li>GLFW<br /></li>
+<li>GLM<br /></li>
+<li>Vulkan Memory Allocator<br /></li>
+<li>DearImGUI<br /></li>
+<li>spirv-reflect<br /></li>
+<li>tiny-glTF</li>
+<li>STB<br /></li>
+</ul>
+
+<hr />
+
+<p>I do it in my free time so here are the features I&rsquo;ve planned on so far:</p>
+
+<ul class="task-list">
+<li>glTF 2.0 Model loading.
+
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Position, Normal, UV, Materials etc.</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Animations and Skeletons.</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Extension support.</label></li>
+</ul></li>
+<li>Physically Based Shading.</li>
+<li>Forward Rendering
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> Simple</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Tiled</label></li>
+</ul></li>
+<li>Omni-directional (point) Shadow Maps
+
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Cubemap</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Dual Paraboloid</label></li>
+</ul></li>
+<li>Directional Shadow Maps
+
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Simple Directional Shadows</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Cascaded Shadow Maps</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Cascaded Perspective Shadow Maps</label></li>
+</ul></li>
+<li>Shader Reflection
+
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Pipeline Layout creation.</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Graphics Pipeline creation.</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Easy Descriptor Set creation.</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Compute Pipeline creation.</label></li>
+</ul></li>
+<li>Deferred Rendering
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> Simple</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Visibility Buffers</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Tiled</label></li>
+</ul></li>
+<li>Reflections
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> Screen Space Reflection</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Raytraced</label></li>
+</ul></li>
+<li>Ambient Occlusion
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> SSAO</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> HBAO</label></li>
+</ul></li>
+<li>Post Processing
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> Bloom</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Auto-adjusing exposure</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Filters</label></li>
+</ul></li>
+<li>Global Illumination
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> Voxel Cone Tracing</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Precomputed Radiance Transfer</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Raytraced</label></li>
+</ul></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2020 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

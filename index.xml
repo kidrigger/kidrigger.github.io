@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Bob&#39;s Terminal</title>
+    <link>/</link>
+    <description>Recent content in Posts on Bob&#39;s Terminal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Nov 2019 21:12:00 +0530</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vulkan Render to Cubemap Using Multiview</title>
+      <link>/post/vulkan-render-to-cubemap-using-multiview/</link>
+      <pubDate>Fri, 29 Nov 2019 21:12:00 +0530</pubDate>
+      
+      <guid>/post/vulkan-render-to-cubemap-using-multiview/</guid>
+      <description>While writing Blaze, and heavily referring Sascha Willem’s Vulkan Samples, I came across the part of writing to cubemaps (PBR-IBL calculations, Shadow Mapping etc) Sascha used a 2D framebuffer attachment to render to, and then copy to a face of the cubemap. But, back when I used learnopengl.com Joey de Vries used Geometry shader for Omni-directional Shadow Mapping. So I ended up researching alternatives - since I&amp;rsquo;ve read Geometry shaders are nasty business (they are slower in quite a few cases) and the one face at a time felt boring.</description>
+    </item>
+    
+    <item>
+      <title>Blaze</title>
+      <link>/project/blaze/</link>
+      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/project/blaze/</guid>
+      <description>Blaze is my lovely little toy renderer that I wholly use as a lab-rat for new techniques and to learn computer graphics in Vulkan.
+
+There are a lot of goals - lot of things to learn. Blaze get&amp;rsquo;s a lot of love - but she&amp;rsquo;s not the only project I&amp;rsquo;m working on.
+I use:
+Some C++17 features (or did and refactored them out after my newfound love for simpler older C++ features)</description>
+    </item>
+    
+    <item>
+      <title>Ray Tracing in One Weekend : GPU Addition</title>
+      <link>/post/gpu-ray-tracing-in-one-weekend/</link>
+      <pubDate>Sat, 16 Feb 2019 08:30:52 +0530</pubDate>
+      
+      <guid>/post/gpu-ray-tracing-in-one-weekend/</guid>
+      <description>Over the week, my latest obsession has been to implement a GPU based ray tracer. Initially, I did read up on using fragment shaders, but it has its limits. So before I even started, I switched over to using compute shaders.
+For anyone who is intent on implementing their own should probably give Peter Shirley’s book good read. I have closely followed it for my project and I’m just going to write about parts that cover the problems I faced when porting the logic to the compute shaders.</description>
+    </item>
+    
+    <item>
+      <title>Here&#39;s What&#39;s New - Graphics</title>
+      <link>/post/whats-new-graphics/</link>
+      <pubDate>Thu, 25 Oct 2018 01:03:59 +0530</pubDate>
+      
+      <guid>/post/whats-new-graphics/</guid>
+      <description>Alright, this is what’s new in my life. I’ve found my area of passion in games, and exactly in rendering in games.
+I’m learning OpenGL, and it’s insane what it can let me do. (I’m not good enough yet, but with practice, THERE IS SO MUCH TO LEARN – AAAAAH)
+So, I started with learnopengl.com and started making a trial monolithic C++ main file.
+There’s one thing watching a demo using Sponza, and there’s one where you’re watching your own code rendering it.</description>
+    </item>
+    
+    <item>
+      <title>Tracer</title>
+      <link>/project/tracer/</link>
+      <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/project/tracer/</guid>
+      <description>Tracer is a set of Monte Carlo Ray Tracing programs that I sometimes work to better understand raytracing concepts.
+There&amp;rsquo;s multiple versions of it - to the point where I may just create a new &amp;lsquo;Tracer&amp;rsquo; in a new language for fun.
+Different Version of Tracer with varying degrees of completeness:
+ C# C++ rust OpenGL/C++  TracerGL is the most advanced Tracer, while the tracer-cpp is the one that&amp;rsquo;s the one I&amp;rsquo;m actively working on.</description>
+    </item>
+    
+    <item>
+      <title>Diving into Open Source: Dipping Toes in Godot</title>
+      <link>/post/godot-dipping-toes/</link>
+      <pubDate>Fri, 04 May 2018 10:35:04 +0530</pubDate>
+      
+      <guid>/post/godot-dipping-toes/</guid>
+      <description>Introduction Open Source Software is probably the greatest testament to Programmer culture, or at least, it is in my opinion. You have a purely voluntary work experience on projects that you can&amp;rsquo;t build alone - while simultaneously contributing to something that more than you and your friends use. The feeling of your contribution to the world is a sweet feeling.
+If you want to know more about open source this should help</description>
+    </item>
+    
+    <item>
+      <title>Google Summer of Code 18 with Godot - Before the Storm</title>
+      <link>/post/gsoc-18-before-the-storm/</link>
+      <pubDate>Thu, 03 May 2018 12:15:00 +0530</pubDate>
+      
+      <guid>/post/gsoc-18-before-the-storm/</guid>
+      <description>Beginning I was interested in game development since 9th grade, which was my main motivation for learning C++. As I got more into development, I started getting interested in game engines and tried creating my own using Allegro for rendering amd resource handling. Inferno, if you’re interested. Finally I got my hands on the Quake 2 engine source code (Thanks id-Software) and started reading the source, and that’s when I came across Godot.</description>
+    </item>
+    
+    <item>
+      <title>Weekly Game Jam 19</title>
+      <link>/post/weekly-game-jam-19/</link>
+      <pubDate>Thu, 23 Nov 2017 23:37:23 +0530</pubDate>
+      
+      <guid>/post/weekly-game-jam-19/</guid>
+      <description>After months of procrastination, I finally decide to take part in a game jam (just 2 weeks before my end semester exams), and registered my name for the WGJ19 and got ready for the theme release.
+Exactly at 10:30pm on 16th November, the theme for the game jam – “Attraction” – was released.
+Spent a good day to jot down all interpretations of the them that my mind could build.</description>
+    </item>
+    
+  </channel>
+</rss>
