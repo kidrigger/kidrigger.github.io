@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Aster :: Bob&#39;s Terminal — Here&#39;s me nerding out.</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="Vulkan is a pain to really toy with, and I want to add some way to allow rapid prototyping &#43; some framework for describing render pipelines as models. Thus I plan for Aster. The idea is to contain a core abstraction over vulkan which I&amp;rsquo;ll iteratively improve to completely abstract away vulkan-specific details.
+Second would be to integrate Lua based descriptions for pipelines that allow easy re-configuration and experimentation as well as live reload." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/project/aster/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  <meta name="twitter:site" content="" />
+
+<meta name="twitter:creator" content="" />
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Aster :: Bob&#39;s Terminal">
+<meta property="og:description" content="Vulkan is a pain to really toy with, and I want to add some way to allow rapid prototyping &#43; some framework for describing render pipelines as models. Thus I plan for Aster. The idea is to contain a core abstraction over vulkan which I&amp;rsquo;ll iteratively improve to completely abstract away vulkan-specific details.
+Second would be to integrate Lua based descriptions for pipelines that allow easy re-configuration and experimentation as well as live reload." />
+<meta property="og:url" content="/project/aster/" />
+<meta property="og:site_name" content="Aster" />
+
+  <meta property="og:image" content="/images/aster/sunrise.png">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2020-10-19 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Electric Sheep
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/post">Posts</a></li>
+        
+      
+        
+          <li><a href="/project">Projects</a></li>
+        
+      
+        
+          <li><a href="/research">Research</a></li>
+        
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/post">Posts</a></li>
+      
+    
+      
+        <li><a href="/project">Projects</a></li>
+      
+    
+      
+        <li><a href="/research">Research</a></li>
+      
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/project/aster/">Aster</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2020-10-19
+    </span>
+    
+    
+  </div>
+
+  
+
+  
+  <img src="/images/aster/sunrise.png" class="post-cover" />
+  
+
+  <div class="post-content"><div>
+        <p>Vulkan is a pain to really toy with, and I want to add some way to allow rapid prototyping + some framework for describing render pipelines as models.
+Thus I plan for Aster. The idea is to contain a core abstraction over vulkan which I&rsquo;ll iteratively improve to completely abstract away vulkan-specific details.</p>
+<p>Second would be to integrate Lua based descriptions for pipelines that allow easy re-configuration and experimentation as well as live reload. This is not a Vulkan-in-Lua situation but more of just describing a pipeline as a Lua configuration file, and a renderpass as a textual representation of a framegraph.</p>
+<p>I use:</p>
+<p>Some C++20 features (And tl::expected for errors)
+Vulkan 1.2
+Some really nice libraries:</p>
+<ul>
+<li>GLFW</li>
+<li>GLM</li>
+<li>Vulkan Memory Allocator</li>
+<li>DearImGUI</li>
+<li>spirv-reflect</li>
+</ul>
+<hr>
+<p>I do it in my free time so here are the features I&rsquo;ve planned on so far:</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Pipeline caching</li>
+<li><input checked="" disabled="" type="checkbox"> Descriptor Set as Resource creation</li>
+<li><input checked="" disabled="" type="checkbox"> Easy Buffer writing</li>
+<li><input checked="" disabled="" type="checkbox"> Complete debug info + Optick profiling</li>
+<li><input checked="" disabled="" type="checkbox"> Multi-GPU configuration</li>
+<li><input disabled="" type="checkbox"> Abstraction to hide Vulkan details.</li>
+<li><input disabled="" type="checkbox"> Lua integration</li>
+<li><input checked="" disabled="" type="checkbox"> Atmospheric Raymarched Rendering Experiment</li>
+<li><input disabled="" type="checkbox"> Blaze re-write.</li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

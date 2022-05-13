@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Bob&#39;s Terminal</title>
@@ -6,10 +6,16 @@
     <description>Recent content in Projects on Bob&#39;s Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 Jun 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Mon, 19 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aster</title>
+      <link>/project/aster/</link>
+      <pubDate>Mon, 19 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/project/aster/</guid>
+      <description>Vulkan is a pain to really toy with, and I want to add some way to allow rapid prototyping + some framework for describing render pipelines as models. Thus I plan for Aster. The idea is to contain a core abstraction over vulkan which I&amp;rsquo;ll iteratively improve to completely abstract away vulkan-specific details.
+Second would be to integrate Lua based descriptions for pipelines that allow easy re-configuration and experimentation as well as live reload.</description>
+    </item>
     
     <item>
       <title>Blaze</title>
@@ -18,7 +24,6 @@
       
       <guid>/project/blaze/</guid>
       <description>Blaze is my lovely little toy renderer that I wholly use as a lab-rat for new techniques and to learn computer graphics in Vulkan.
-
 There are a lot of goals - lot of things to learn. Blaze get&amp;rsquo;s a lot of love - but she&amp;rsquo;s not the only project I&amp;rsquo;m working on.
 I use:
 Some C++17 features (or did and refactored them out after my newfound love for simpler older C++ features)</description>

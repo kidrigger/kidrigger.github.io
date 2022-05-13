@@ -7,7 +7,6 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content="Blaze is my lovely little toy renderer that I wholly use as a lab-rat for new techniques and to learn computer graphics in Vulkan.
-
 There are a lot of goals - lot of things to learn. Blaze get&amp;rsquo;s a lot of love - but she&amp;rsquo;s not the only project I&amp;rsquo;m working on.
 I use:
 Some C&#43;&#43;17 features (or did and refactored them out after my newfound love for simpler older C&#43;&#43; features)" />
@@ -42,14 +41,13 @@ Some C&#43;&#43;17 features (or did and refactored them out after my newfound lo
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Blaze :: Bob&#39;s Terminal">
 <meta property="og:description" content="Blaze is my lovely little toy renderer that I wholly use as a lab-rat for new techniques and to learn computer graphics in Vulkan.
-
 There are a lot of goals - lot of things to learn. Blaze get&amp;rsquo;s a lot of love - but she&amp;rsquo;s not the only project I&amp;rsquo;m working on.
 I use:
 Some C&#43;&#43;17 features (or did and refactored them out after my newfound love for simpler older C&#43;&#43; features)" />
 <meta property="og:url" content="/project/blaze/" />
 <meta property="og:site_name" content="Blaze" />
 
-  <meta property="og:image" content="/images/blaze/logo.png">
+  <meta property="og:image" content="/images/blaze/csm-vis.png">
 
 <meta property="og:image:width" content="2048">
 <meta property="og:image:height" content="1024">
@@ -100,6 +98,10 @@ Some C&#43;&#43;17 features (or did and refactored them out after my newfound lo
         
       
         
+          <li><a href="/research">Research</a></li>
+        
+      
+        
           <li><a href="/about">About</a></li>
         
       
@@ -117,6 +119,10 @@ Some C&#43;&#43;17 features (or did and refactored them out after my newfound lo
     
       
         <li><a href="/project">Projects</a></li>
+      
+    
+      
+        <li><a href="/research">Research</a></li>
       
     
       
@@ -148,108 +154,105 @@ Some C&#43;&#43;17 features (or did and refactored them out after my newfound lo
   
 
   
-  <img src="/images/blaze/logo.png" class="post-cover" />
+  <img src="/images/blaze/csm-vis.png" class="post-cover" />
   
 
   <div class="post-content"><div>
         <p>Blaze is my lovely little toy renderer that I wholly use as a lab-rat for new techniques and to learn computer graphics
 in Vulkan.</p>
-
-<p><center><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gmUxLgRCC1o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
-
+<!-- raw HTML omitted -->
 <p>There are a lot of goals - lot of things to learn. Blaze get&rsquo;s a lot of love - but she&rsquo;s not the only project I&rsquo;m
 working on.</p>
-
 <p>I use:</p>
-
-<p>Some C++17 features (or did and refactored them out after my newfound love for simpler older C++ features)<br />
-Vulkan 1.1 (Will upgrade to 1.2 once I switch to an RTX card)<br />
+<p>Some C++17 features (or did and refactored them out after my newfound love for simpler older C++ features)<br>
+Vulkan 1.1 (Will upgrade to 1.2 once I switch to an RTX card)<br>
 Some really nice libraries:</p>
-
 <ul>
-<li>GLFW<br /></li>
-<li>GLM<br /></li>
-<li>Vulkan Memory Allocator<br /></li>
-<li>DearImGUI<br /></li>
-<li>spirv-reflect<br /></li>
+<li>GLFW</li>
+<li>GLM</li>
+<li>Vulkan Memory Allocator</li>
+<li>DearImGUI</li>
+<li>spirv-reflect</li>
 <li>tiny-glTF</li>
-<li>STB<br /></li>
+<li>STB</li>
 </ul>
-
-<hr />
-
-<p>I do it in my free time so here are the features I&rsquo;ve planned on so far:</p>
-
-<ul class="task-list">
+<hr>
+<p>I do it in my free time so here are the features I&rsquo;ve planned or completed on so far:</p>
+<ul>
 <li>glTF 2.0 Model loading.
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Position, Normal, UV, Materials etc.</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Animations and Skeletons.</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Extension support.</label></li>
-</ul></li>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Position, Normal, UV, Materials etc.</li>
+<li><input disabled="" type="checkbox"> Animations and Skeletons.</li>
+<li><input disabled="" type="checkbox"> Extension support.</li>
+</ul>
+</li>
 <li>Physically Based Shading.</li>
 <li>Forward Rendering
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Simple</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Tiled</label></li>
-</ul></li>
-<li>Omni-directional (point) Shadow Maps
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Cubemap</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Dual Paraboloid</label></li>
-</ul></li>
-<li>Directional Shadow Maps
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Simple Directional Shadows</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Cascaded Shadow Maps</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Cascaded Perspective Shadow Maps</label></li>
-</ul></li>
-<li>Shader Reflection
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Pipeline Layout creation.</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Graphics Pipeline creation.</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Easy Descriptor Set creation.</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Compute Pipeline creation.</label></li>
-</ul></li>
-<li>Deferred Rendering
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Simple</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Visibility Buffers</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Tiled</label></li>
-</ul></li>
-<li>Reflections
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Screen Space Reflection</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Raytraced</label></li>
-</ul></li>
-<li>Ambient Occlusion
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> SSAO</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> HBAO</label></li>
-</ul></li>
-<li>Post Processing
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Bloom</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Auto-adjusing exposure</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Filters</label></li>
-</ul></li>
-<li>Global Illumination
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Voxel Cone Tracing</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Precomputed Radiance Transfer</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Raytraced</label></li>
-</ul></li>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Simple</li>
+<li><input disabled="" type="checkbox"> Tiled</li>
 </ul>
+</li>
+<li>Omni-directional (point) Shadow Maps
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Cubemap</li>
+<li><input disabled="" type="checkbox"> Dual Paraboloid</li>
+</ul>
+</li>
+<li>Directional Shadow Maps
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Simple Directional Shadows</li>
+<li><input checked="" disabled="" type="checkbox"> Cascaded Shadow Maps</li>
+<li><input disabled="" type="checkbox"> Cascaded Perspective Shadow Maps</li>
+</ul>
+</li>
+<li>Shader Reflection
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Pipeline Layout creation.</li>
+<li><input checked="" disabled="" type="checkbox"> Graphics Pipeline creation.</li>
+<li><input disabled="" type="checkbox"> Easy Descriptor Set creation.</li>
+<li><input disabled="" type="checkbox"> Compute Pipeline creation.</li>
+</ul>
+</li>
+<li>Deferred Rendering
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Simple</li>
+<li><input disabled="" type="checkbox"> Visibility Buffers</li>
+<li><input disabled="" type="checkbox"> Tiled</li>
+</ul>
+</li>
+<li>Reflections
+<ul>
+<li><input disabled="" type="checkbox"> Screen Space Reflection</li>
+<li><input disabled="" type="checkbox"> Raytraced</li>
+</ul>
+</li>
+<li>Ambient Occlusion
+<ul>
+<li><input checked="" disabled="" type="checkbox"> SSAO</li>
+<li><input disabled="" type="checkbox"> HBAO</li>
+</ul>
+</li>
+<li>Post Processing
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Bloom</li>
+<li><input disabled="" type="checkbox"> Auto-adjusing exposure</li>
+<li><input disabled="" type="checkbox"> Filters</li>
+</ul>
+</li>
+<li>Global Illumination
+<ul>
+<li><input disabled="" type="checkbox"> Voxel Cone Tracing</li>
+<li><input disabled="" type="checkbox"> Precomputed Radiance Transfer</li>
+<li><input disabled="" type="checkbox"> Raytraced</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="screen-space-ambient-occlusion">Screen Space Ambient Occlusion<a href="#screen-space-ambient-occlusion" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p><img src="images/blaze/ssao.png" alt="SSAO"></p>
+<h2 id="cascaded-shadow-maps">Cascaded Shadow Maps<a href="#cascaded-shadow-maps" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p><img src="images/blaze/csm-vis.png" alt="CSM"></p>
 
       </div></div>
 
@@ -266,7 +269,7 @@ Some really nice libraries:</p>
   <div class="footer__inner">
     
       <div class="copyright">
-        <span>© 2020 Powered by <a href="http://gohugo.io">Hugo</a></span>
+        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
     
         <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
       </div>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Bob&#39;s Terminal</title>
@@ -6,20 +6,36 @@
     <description>Recent content in Posts on Bob&#39;s Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Apr 2020 14:41:03 +0200</lastBuildDate>
-    
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 19 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About Me</title>
       <link>/about/</link>
-      <pubDate>Sat, 25 Apr 2020 14:41:03 +0200</pubDate>
+      <pubDate>Fri, 13 May 2022 13:18:00 +0200</pubDate>
       
       <guid>/about/</guid>
       <description>Since you&amp;rsquo;re here, this is the time for me to introduce myself.
 My name is Anish Bhobe and as you can guess from my projects, I&amp;rsquo;m a huge enthusiast of computer graphics and C++ in game development.
-I at the moment of writing I am a fortnight (not the game) away from finishing my last academic requirement to get the paper that declares that I may have learnt a few things at Birla Institute of Science and Technology, Pilani - K.</description>
+I at the moment of writing I have long (2020) received a Bachelor of Engineering Degree from Birla Institute of Science and Technology, Pilani.
+I&amp;rsquo;ve worked at Microsoft R&amp;amp;D (Hyderabad, India) for 1 full year.</description>
+    </item>
+    
+    <item>
+      <title>List of Publications</title>
+      <link>/research/</link>
+      <pubDate>Thu, 21 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/research/</guid>
+      <description>2021  Wheelchair Automation by a Hybrid BCI System Using SSVEP and Eye Blinks  L. Kanungo, N. Garg, A. Bhobe, S. Rajguru and V. Baths, &amp;ldquo;Wheelchair Automation by a Hybrid BCI System Using SSVEP and Eye Blinks,&amp;rdquo; 2021 IEEE International Conference on Systems, Man, and Cybernetics (SMC), 2021, pp. 411-416, doi: 10.1109/SMC52423.2021.9659266.    </description>
+    </item>
+    
+    <item>
+      <title>Aster</title>
+      <link>/project/aster/</link>
+      <pubDate>Mon, 19 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/project/aster/</guid>
+      <description>Vulkan is a pain to really toy with, and I want to add some way to allow rapid prototyping + some framework for describing render pipelines as models. Thus I plan for Aster. The idea is to contain a core abstraction over vulkan which I&amp;rsquo;ll iteratively improve to completely abstract away vulkan-specific details.
+Second would be to integrate Lua based descriptions for pipelines that allow easy re-configuration and experimentation as well as live reload.</description>
     </item>
     
     <item>
@@ -38,7 +54,6 @@ I at the moment of writing I am a fortnight (not the game) away from finishing m
       
       <guid>/project/blaze/</guid>
       <description>Blaze is my lovely little toy renderer that I wholly use as a lab-rat for new techniques and to learn computer graphics in Vulkan.
-
 There are a lot of goals - lot of things to learn. Blaze get&amp;rsquo;s a lot of love - but she&amp;rsquo;s not the only project I&amp;rsquo;m working on.
 I use:
 Some C++17 features (or did and refactored them out after my newfound love for simpler older C++ features)</description>

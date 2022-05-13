@@ -94,6 +94,10 @@
         
       
         
+          <li><a href="/research">Research</a></li>
+        
+      
+        
           <li><a href="/about">About</a></li>
         
       
@@ -111,6 +115,10 @@
     
       
         <li><a href="/project">Projects</a></li>
+      
+    
+      
+        <li><a href="/research">Research</a></li>
       
     
       
@@ -144,87 +152,54 @@
   
 
   <div class="post-content"><div>
-        
-
-<p>While writing Blaze, and heavily referring <a href="https://github.com/SaschaWillems/Vulkan">Sascha Willem’s Vulkan Samples</a>, I came across the part of writing to cubemaps (PBR-IBL calculations, Shadow Mapping etc)
+        <p>While writing Blaze, and heavily referring <a href="https://github.com/SaschaWillems/Vulkan">Sascha Willem’s Vulkan Samples</a>, I came across the part of writing to cubemaps (PBR-IBL calculations, Shadow Mapping etc)
 Sascha used a 2D framebuffer attachment to render to, and then copy to a face of the cubemap. But, back when I used <a href="https://www.learnopengl.com">learnopengl.com</a> Joey de Vries used Geometry shader for Omni-directional Shadow Mapping. So I ended up researching alternatives - since I&rsquo;ve read Geometry shaders are nasty business (they are slower in quite a few cases) and the one face at a time felt boring.</p>
-
 <h2 id="alternatives">Alternatives<a href="#alternatives" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-
 <ul>
 <li>2D framebuffer + copy to face (as in the samples)</li>
 <li>Geometry Shader (old wisdom from LearnOpenGL.com days)</li>
 <li>Multiview (What I ended up choosing)</li>
 </ul>
-
 <h2 id="why-not-geometry-shader">Why not Geometry Shader?<a href="#why-not-geometry-shader" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-
 <p>OpenGL allowed us to use Geometry Shader and gl_Layer to actually render to a face of the cubemap – therefore Vulkan should too. One search worth of digging later, I found an <a href="https://github.com/SaschaWillems/Vulkan/issues/50">issue</a> on the repo where case against Geometry shaders was made.</p>
-
 <p>Whilst digging more resources on why so, I found this <a href="http://www.joshbarczak.com/blog/?p=667">gem of an analysis</a> by Joshua Barczak. It concludes that unless you’re using an Intel GPU, Geometry Shader would probably be slower (It is very workload and implementation dependent)</p>
-
 <p>Now, while I could have tried and tested it (maybe sometime in the future?)
 I decided to just go with the MultiView approach instead – as it was something commented on the GS issue.</p>
-
 <h2 id="what-is-multi-view">What is Multi-view?<a href="#what-is-multi-view" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-
 <p>Initially an <a href="https://www.khronos.org/registry/OpenGL/extensions/OVR/OVR_multiview.txt">OpenGL OVR Extention</a>, Multi View allows reducing draw calls by allowing multiple layers of a Framebuffer Attachment to be written to from a single draw call.</p>
-
 <p>Of course, the aim of Multi View is to be used for multi-Viewport rendering (VR / Stereoscopic). But since multiview has no restrictions on number of layers on the attachment, we can just as well write to the Cubemap.</p>
-
 <h2 id="how-to-multi-view">How to Multi-view?<a href="#how-to-multi-view" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-
 <p>I’m using a 2D attachment RenderPass and Pipeline as the starting point.</p>
-
 <h3 id="1-enabling-the-extension">1. Enabling the Extension<a href="#1-enabling-the-extension" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
-
 <p>Simply enable the VK_KHR_multiview (VK_KHR_MULTIVIEW_EXTENSION_NAME) extension while creating the Logical Device.</p>
-
 <h3 id="2-creating-a-multi-view-renderpass">2. Creating a Multi-View RenderPass<a href="#2-creating-a-multi-view-renderpass" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
-
 <p>Creating a Multi-View RenderPass only requires a slight addition to the existing VkRenderPassCreateInfo.
 The <code>pNext</code> field needs to be set to a <code>VkRenderPassMultiviewCreateInfo</code></p>
-
-<pre><code class="language-cpp">VkRenderPassMultiviewCreateInfo createInfo{};
-createInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_MULTIVIEW_CREATE_INFO;
-createInfo.subpassCount = 1;
-createInfo.pViewMasks = &amp;viewMask;
-createInfo.correlationMaskCount = 1;
-createInfo.pCorrelationMasks = &amp;correlationMask;
-</code></pre>
-
-<h4 id="quick-explanation">Quick Explanation:<a href="#quick-explanation" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">VkRenderPassMultiviewCreateInfo createInfo{};
+createInfo.sType <span style="color:#f92672">=</span> VK_STRUCTURE_TYPE_RENDER_PASS_MULTIVIEW_CREATE_INFO;
+createInfo.subpassCount <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+createInfo.pViewMasks <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>viewMask;
+createInfo.correlationMaskCount <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+createInfo.pCorrelationMasks <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>correlationMask;
+</code></pre></div><h4 id="quick-explanation">Quick Explanation:<a href="#quick-explanation" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
 <ol>
 <li><code>subpassCount</code> is not only the number of subpasses in the render pass but also the number of view masks in <code>pViewMasks</code></li>
 <li>Each view mask is an unsigned int, where ith least significant bit denotes the layer number. 0b0011 means write to layer 0 and 1.</li>
 <li>For our cubemap, we will have only one subpass, writing to all the faces (viewMask = 0b00111111)</li>
 <li>According to the spec, correlation masks denote which views have high spatial coherence – since our cubemaps will be ideally facing 6 completely different directions – I think they should be left to null (I’ll update this if I’m wrong)</li>
 </ol>
-
 <h3 id="3-attaching-the-cubemap-to-the-framebuffer">3 Attaching the Cubemap to the Framebuffer<a href="#3-attaching-the-cubemap-to-the-framebuffer" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
-
 <p>Ideally the simplest part – standard framebuffer, just set createInfo.layers = 6</p>
-
 <h3 id="4-views-uniform-buffer">4 Views Uniform Buffer<a href="#4-views-uniform-buffer" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
-
 <p>For each face of the cubemap, you will need a View. This should be easy. Just create the 6 view matrices and put them on a uniform buffer.</p>
-
 <h3 id="5-shaders">5 Shaders<a href="#5-shaders" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
-
 <p>The fragment shader does not change for this. The only difference is in the vertex shader.
 Instead of having one view matrix coming in, we would now index a view matrix from the uniform buffer using the gl_ViewIndex variable.</p>
-
-<h2 id="that-s-it">That’s it!<a href="#that-s-it" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-
+<h2 id="thats-it">That’s it!<a href="#thats-it" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <p>With all these changes, instead of a simple 2D attachment, you can now attach a cubemap and get it running.</p>
-
 <h2 id="perf">Perf?<a href="#perf" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-
 <p>Performance comparison between separate passes vs multiview is in the graph below.</p>
-
-<p><img src="/images/vk-cubemap/perf.png" alt="performance-compare" /></p>
-
+<p><img src="/images/vk-cubemap/perf.png" alt="performance-compare"></p>
 <p>Consistently Multi-View outperforms having separate render passes. I would guess that the lack of copy operations and draw submits should save the time.</p>
 
       </div></div>
@@ -262,7 +237,7 @@ Instead of having one view matrix coming in, we would now index a view matrix fr
   <div class="footer__inner">
     
       <div class="copyright">
-        <span>© 2020 Powered by <a href="http://gohugo.io">Hugo</a></span>
+        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
     
         <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
       </div>
