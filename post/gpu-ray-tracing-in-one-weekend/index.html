@@ -169,7 +169,7 @@ For anyone who is intent on implementing their own should probably give Peter Sh
 <p>You can save the texture to an image if you wish using a library like <a href="https://github.com/nothings/stb">STB Image</a> but I prefer to simply take screenshots.</p>
 <h1 id="2-classes-and-inheritance">2. Classes and Inheritance<a href="#2-classes-and-inheritance" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <p>GPU is a simple device so it has no inheritance. You have to make do with structs and functions. Simple sphere struct and simple material struct.</p>
-<p>However for material and the scatter function, you don’t need multiple structs! Just add constants/enums to specify the type of material (Lambertian, Metallic, Dielectric), albedo, and one param (<!-- raw HTML omitted -->, fuzziness and refractive index respectively)</p>
+<p>However for material and the scatter function, you don’t need multiple structs! Just add constants/enums to specify the type of material (Lambertian, Metallic, Dielectric), albedo, and one param (<empty>, fuzziness and refractive index respectively)</p>
 <p>Just add a switch statement in the scatter function to get your work done. Ofcourse, this comes at its own cost - branching isn&rsquo;t cheap on the GPU.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#define LAMBERTIAN 0
 </span><span style="color:#75715e">#define METALLIC 1

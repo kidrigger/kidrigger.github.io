@@ -24,7 +24,7 @@ Second would be to integrate Lua based descriptions for pipelines that allow eas
       
       <guid>/project/blaze/</guid>
       <description>Blaze is my lovely little toy renderer that I wholly use as a lab-rat for new techniques and to learn computer graphics in Vulkan.
-There are a lot of goals - lot of things to learn. Blaze get&amp;rsquo;s a lot of love - but she&amp;rsquo;s not the only project I&amp;rsquo;m working on.
+There are a lot of goals - lot of things to learn. Blaze get&amp;rsquo;s a lot of love - but she&amp;rsquo;s not the only project I&amp;rsquo;m working on.
 I use:
 Some C++17 features (or did and refactored them out after my newfound love for simpler older C++ features)</description>
     </item>
