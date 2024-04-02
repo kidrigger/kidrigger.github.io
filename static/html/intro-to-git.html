@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Introduction to Git</title>
+<meta name="author" content="Anish Bhobe"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/serif.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h2>Introduction to Git</h2><h3>Anish Bhobe</h3><h5><a href="mailto:anish.bhobe@telecom-paris.fr">anish.bhobe@telecom-paris.fr</a></h5>
+</section>
+<section>
+<section id="slide-1">
+<h2 id="1"><span class="section-number-2">1.</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+</section>
+<section id="slide-1-1">
+<h3 id="1-1"><span class="section-number-3">1.1.</span> What is Git</h3>
+<ul>
+<li><a href="https://git-scm.com/">Git</a> is a <a href="https://en.wikipedia.org/wiki/Version_control">Version Control System</a> (a.k.a. Source Control Manager)</li>
+<li>It is a Free and Open Source Software (FOSS)</li>
+<li>It is distributed i.e. does not need a central server</li>
+<li>It allows managing changes in source code, over time and over multiple concurrent users.</li>
+
+</ul>
+</section>
+<section id="slide-1-2">
+<h3 id="1-2"><span class="section-number-3">1.2.</span> How does it work?</h3>
+<ul>
+<li>Git keeps track of the files you want it to handle within the project.
+<ul>
+<li>It stores the changes made at specific points.</li>
+<li>You only need to store one file (no more <code>report_draft_v3_final.txt</code>)</li>
+
+</ul></li>
+<li>Git also allows you to keep parallel/alternate versions.</li>
+
+</ul>
+</section>
+<section id="slide-1-3">
+<h3 id="1-3"><span class="section-number-3">1.3.</span> Interface</h3>
+<ul>
+<li>We will see the <code>git cli</code> (Command Line Interface)</li>
+<li>In practice, you use a git client.
+<ol>
+<li>Git for Windows</li>
+<li>VSCode Git Extension</li>
+<li>Eclipse Git Integration (egit)</li>
+<li>Emacs Git Integration (magit)</li>
+<li>GitKraken</li>
+
+</ol></li>
+
+</ul>
+</section>
+<section id="slide-1-4">
+<h3 id="1-4"><span class="section-number-3">1.4.</span> Help</h3>
+<p>
+When in doubt, use <code>--help</code>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> --help
+<span style="color: #ECBE7B;">git</span> &lt;subcommand&gt; --help
+</pre>
+</div>
+<ul>
+<li>Always provides the complete information.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-2">
+<h2 id="2"><span class="section-number-2">2.</span> Concepts</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+</section>
+<section id="slide-2-1">
+<h3 id="2-1"><span class="section-number-3">2.1.</span> Repository</h3>
+<ul>
+<li>The <code>.git</code> folder that keeps all the git related files used only for version control.</li>
+<li>Never edit this manually.</li>
+<li><p>
+Inside the project you want to manage, enter the command to create a repository
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">  <span style="color: #ECBE7B;">git</span> init .
+</pre>
+</div>
+<ul>
+<li>This creates a new repository at <code>.</code> (current location)</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-2-2">
+<h3 id="2-2"><span class="section-number-3">2.2.</span> Working Tree</h3>
+<ul>
+<li>All the files and subdirectories of the directory where the repo exists.</li>
+<li>The folder in which <code>.git</code> exists and its subfolders is the working tree.</li>
+
+</ul>
+</section>
+<section id="slide-2-3">
+<h3 id="2-3"><span class="section-number-3">2.3.</span> Index</h3>
+<ul>
+<li>Git does not track all files by default.</li>
+<li>Index is the list of files that the git repository is tracking.
+<ul>
+<li>This is also called <i>staging</i></li>
+
+</ul></li>
+
+</ul>
+
+<div id="org833f2ec" class="figure">
+<p><img src="./staging.png" alt="staging.png" />
+</p>
+</div>
+</section>
+<section>
+<ul>
+<li><p>
+You can add a file to index with
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">  <span style="color: #ECBE7B;">git</span> add &lt;filename&gt;
+</pre>
+</div></li>
+<li><p>
+You could also add the entire current folder by using
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">  <span style="color: #ECBE7B;">git</span> add .
+</pre>
+</div></li>
+
+</ul>
+</section>
+<section>
+
+<div id="orgb1c3113" class="figure">
+<p><img src="./staged.png" alt="staged.png" />
+</p>
+</div>
+</section>
+<section id="slide-2-4">
+<h3 id="2-4"><span class="section-number-3">2.4.</span> Commit</h3>
+<ul>
+<li>A commit is an index that is preserved.</li>
+<li><p>
+All the <i>staged</i> files are added to the commit with a user defined message.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">  <span style="color: #ECBE7B;">git</span> commit
+</pre>
+</div></li>
+<li>Git allows you to go back to any commit using its <code>hash</code> which is a unique label.</li>
+
+</ul>
+</section>
+<section id="slide-2-4-1">
+<h4 id="2-4-1"><span class="section-number-4">2.4.1.</span> Commit Messages</h4>
+<ul>
+<li>Always use a informative and precise commit message.
+<ul>
+<li>One line brief title (56 characters ending with a <code>.</code>)</li>
+<li>An empty line</li>
+<li>And a more detailed message (if required)</li>
+
+</ul></li>
+<li>Always try to ensure each commit contains one <i>task</i> so that it is easy to find.</li>
+
+</ul>
+</section>
+<section>
+
+<div id="orgdbeab4b" class="figure">
+<p><img src="./commit.png" alt="commit.png" />
+</p>
+</div>
+</section>
+<section id="slide-2-5">
+<h3 id="2-5"><span class="section-number-3">2.5.</span> Log</h3>
+<p>
+A list of all your commits in the current history.
+<img src="./log.png" alt="log.png" />
+</p>
+</section>
+<section id="slide-2-6">
+<h3 id="2-6"><span class="section-number-3">2.6.</span> Branch</h3>
+<ul>
+<li>Branches are parallel version of commits.</li>
+<li>You can use a branch to work on multiple independent features in parallel.</li>
+<li>Branches have various uses
+<ul>
+<li>But for courses except INF113 using just a main branch <i>may</i> suffice.</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section>
+<ul>
+<li>You can
+<ol>
+<li><p>
+List Branches
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> branch
+</pre>
+</div></li>
+<li><p>
+Create branches
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> branch &lt;branch-name&gt;
+</pre>
+</div></li>
+
+</ol></li>
+
+</ul>
+<aside class="notes">
+<p>
+git log &#x2013;graph &#x2013;oneline
+</p>
+
+</aside>
+<p>
+Practice
+  <a href="https://learngitbranching.js.org">Learn Git Branching</a>
+</p>
+</section>
+<section id="slide-2-7">
+<h3 id="2-7"><span class="section-number-3">2.7.</span> Merge commits</h3>
+<ul>
+<li>Adding together two separated lists of commits requires a <code>merge</code>.</li>
+<li>Git will try to add the changes from both the branches.
+<ul>
+<li>If both modify the same lines and git cannot automatically resolve</li>
+<li>It will create a <code>merge conflict</code></li>
+
+</ul></li>
+
+</ul>
+</section>
+<section>
+
+<div id="org223de78" class="figure">
+<p><img src="./branch.drawio.png" alt="branch.drawio.png" />
+</p>
+</div>
+</section>
+<section id="slide-2-8">
+<h3 id="2-8"><span class="section-number-3">2.8.</span> Conflict</h3>
+<ul>
+<li>Conflicts are notified by git, along with the files.</li>
+
+</ul>
+
+<div id="orge8ebd82" class="figure">
+<p><img src="./conflict.png" alt="conflict.png" />
+</p>
+</div>
+<ul>
+<li>Visible in <code>git status</code>
+<img src="./conflict-status.png" alt="conflict-status.png" /></li>
+
+</ul>
+</section>
+<section>
+<ul>
+<li>Opening the file in a text editor will show the following</li>
+
+</ul>
+
+<div id="orge79071a" class="figure">
+<p><img src="./conflict-resolution-1.png" alt="conflict-resolution-1.png" />
+</p>
+</div>
+<ul>
+<li>You can modify the file to keep either of the changes, or keep both.
+<ul>
+<li>Also remove the surrounding characters.</li>
+
+</ul></li>
+
+</ul>
+
+<div id="org3ee779c" class="figure">
+<p><img src="./conflict-resolved.png" alt="conflict-resolved.png" />
+</p>
+</div>
+<ul>
+<li>Finally, you can commit this change.</li>
+
+</ul>
+</section>
+<section id="slide-2-9">
+<h3 id="2-9"><span class="section-number-3">2.9.</span> Rebase</h3>
+<ul>
+<li>Rebase is an alternate merge behaviour
+<ul>
+<li>Instead of <code>merge commit</code>, reapply the commits to the top of the destination.</li>
+
+</ul></li>
+<li><p>
+This is cleaner, and often considered more appropriate when doing a <code>pull</code> to avoid too many merges.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">  <span style="color: #ECBE7B;">git</span> pull --rebase
+</pre>
+</div></li>
+
+</ul>
+</section>
+<section>
+
+<div id="org5a138d3" class="figure">
+<p><img src="./pre-rebase.drawio.png" alt="pre-rebase.drawio.png" />
+</p>
+</div>
+</section>
+<section>
+
+<div id="orgfdaba56" class="figure">
+<p><img src="./rebase-1.drawio.png" alt="rebase-1.drawio.png" />
+</p>
+</div>
+</section>
+<section>
+
+<div id="orgc7322e3" class="figure">
+<p><img src="./rebase-2.drawio.png" alt="rebase-2.drawio.png" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-3">
+<h2 id="3"><span class="section-number-2">3.</span> Collaboration</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+</section>
+<section id="slide-3-1">
+<h3 id="3-1"><span class="section-number-3">3.1.</span> Remote</h3>
+<ul>
+<li>Collaborate by sending your changes to a remote repository.</li>
+<li>Publicly available repository</li>
+<li><p>
+You can add extra remotes using
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">  <span style="color: #ECBE7B;">git</span> remote add &lt;custom-name&gt; &lt;url&gt;
+</pre>
+</div></li>
+
+</ul>
+</section>
+<section id="slide-3-2">
+<h3 id="3-2"><span class="section-number-3">3.2.</span> Clone</h3>
+<ul>
+<li><p>
+Clones a pre-existing remote repository.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">  <span style="color: #ECBE7B;">git</span> clone &lt;url&gt; <span style="color: #51afef;">[</span>&lt;directory&gt;<span style="color: #51afef;">]</span>
+</pre>
+</div></li>
+
+</ul>
+</section>
+<section id="slide-3-3">
+<h3 id="3-3"><span class="section-number-3">3.3.</span> Pull</h3>
+<ul>
+<li>Recieve commits from the remote repository</li>
+<li>Git treats this as a <code>merge</code></li>
+<li><p>
+Keep your local repo up-to-date by using
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">  <span style="color: #ECBE7B;">git</span> pull <span style="color: #51afef;">[</span>&lt;remote&gt; &lt;branch&gt;<span style="color: #51afef;">]</span>
+</pre>
+</div></li>
+
+</ul>
+</section>
+<section id="slide-3-4">
+<h3 id="3-4"><span class="section-number-3">3.4.</span> Stash</h3>
+<ul>
+<li>Sometimes you need to put away your work to pull.</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> stash
+</pre>
+</div>
+<ul>
+<li>And you can re-apply it by</li>
+
+</ul>
+<pre class="example">
+git stash apply
+</pre>
+</section>
+<section id="slide-3-5">
+<h3 id="3-5"><span class="section-number-3">3.5.</span> Push</h3>
+<ul>
+<li>Send all your commits to remote repository.</li>
+<li>Push <b>will</b> fail if the local repository is behind the remote.</li>
+<li>Always ensure to <code>pull</code> before push.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-4">
+<h2 id="4"><span class="section-number-2">4.</span> Other features</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+</section>
+<section id="slide-4-1">
+<h3 id="4-1"><span class="section-number-3">4.1.</span> Git Ignore</h3>
+<ul>
+<li>Generally, certain files don&rsquo;t need to be version controlled.</li>
+<li><code>.o</code>, <code>.so</code>, <code>.dll</code>, <code>.exe</code>, <code>.class</code>, <code>log.txt</code>, <code>token.txt</code> etc.</li>
+<li>These are outputs/secrets that should not be available in git.</li>
+<li>Manual staging will avoid these, but that is a lot of work.
+<ul>
+<li>And they will still show in the <code>git status</code></li>
+
+</ul></li>
+<li>Solution is to use the <code>.gitignore</code> file.</li>
+
+</ul>
+</section>
+<section id="slide-4-2">
+<h3 id="4-2"><span class="section-number-3">4.2.</span> .. Git Ignore</h3>
+<ul>
+<li>Create a file called <code>.gitignore</code> in the same directory as <code>.git/</code></li>
+<li>You can write a filename, a directory or a regex (<code>*.exe</code>) that it ignores.</li>
+<li><p>
+For Example: for <b>VSCode</b>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-gitignore">  .vscode<span style="color: #a9a1e1;">/</span>
+  .code-workspace
+</pre>
+</div></li>
+<li>You can find samples on Github</li>
+
+</ul>
+</section>
+<section id="slide-4-3">
+<h3 id="4-3"><span class="section-number-3">4.3.</span> Other helpful commands</h3>
+<ul>
+<li>Reset
+<ul>
+<li><p>
+Removes things from index. Reverse of <code>git add</code>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">    <span style="color: #ECBE7B;">git</span> reset &lt;filename&gt;
+</pre>
+</div></li>
+
+</ul></li>
+<li>Revert
+<ul>
+<li>Applies the opposite diff of the commit</li>
+
+</ul></li>
+<li>Bisect
+<ul>
+<li>Identify which commit caused a bug.</li>
+<li>Use <i>binary search</i> until you find the commit.</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-5">
+<h2 id="5"><span class="section-number-2">5.</span> General Workflow</h2>
+<ul>
+<li><p>
+When changes are &ldquo;ready&rdquo;
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> add &lt;files&gt;
+<span style="color: #ECBE7B;">git</span> commit
+<span style="color: #ECBE7B;">git</span> pull --rebase
+<span style="color: #ECBE7B;">git</span> push
+</pre>
+</div></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-6">
+<h2 id="6"><span class="section-number-2">6.</span> Best Practices</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+</section>
+<section id="slide-6-1">
+<h3 id="6-1"><span class="section-number-3">6.1.</span> Index</h3>
+<ul>
+<li>Always check the staged files before commit.</li>
+<li>Always keep an up-to-date <code>.gitignore</code></li>
+
+</ul>
+</section>
+<section id="slide-6-2">
+<h3 id="6-2"><span class="section-number-3">6.2.</span> Commits</h3>
+<ul>
+<li>Always write a descriptive commit message.</li>
+<li>Always focus a commit on one task.
+<ol>
+<li>A subsection of an assignment</li>
+<li>A bug-fix</li>
+<li>A feature</li>
+
+</ol></li>
+
+</ul>
+</section>
+<section id="slide-6-3">
+<h3 id="6-3"><span class="section-number-3">6.3.</span> Pull/Push</h3>
+<ul>
+<li>Always pull before pushing</li>
+<li>Do not <b>force push</b> unless you are certain.</li>
+<li>Never force push on <code>main</code></li>
+
+</ul>
+</section>
+<section id="slide-6-4">
+<h3 id="6-4"><span class="section-number-3">6.4.</span> Best Practices</h3>
+<ul>
+<li>Ideally, develop code on branches and open pull requests to <code>main</code> per-feature.</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/search/search.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
